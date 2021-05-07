@@ -5,7 +5,7 @@
   "workspaceFolder": "/avworkspace",
   "settings": {
     "terminal.integrated.inheritEnv": false,
-    "terminal.integrated.shell.linux": "/bin/bash"
+    "terminal.integrated.defaultProfile.linux": "/bin/bash"
   },
   "extensions": [
     "yzhang.markdown-all-in-one",
