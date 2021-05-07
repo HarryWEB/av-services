@@ -718,6 +718,9 @@ To create the Test Azure Iot Edge av-services pipeline, follow the same steps as
 
 ![](./docs/img/azure-devops-pipeline-13.png)
 
+
+[![TestAzureIotEdgeServices](https://github.com/HarryWEB/av-services/actions/workflows/github-action.tests-azure-iot-edge.yml/badge.svg)](https://github.com/HarryWEB/av-services/actions/workflows/github-action.tests-azure-iot-edge.yml)
+
 # Next Steps
 
 Below a list of possible improvements:  
