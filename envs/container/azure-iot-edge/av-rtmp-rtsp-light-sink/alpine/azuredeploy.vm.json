@@ -52,20 +52,6 @@
         "description": "Virtual Machine Size: Standard_DS3_v2"
       }
     },
-    "portHTTP": {
-      "type": "string",
-      "defaultValue": "80",
-      "metadata": {
-        "description": "http port"
-      }
-    },
-    "portSSL": {
-      "type": "string",
-      "defaultValue": "443",
-      "metadata": {
-        "description": "ssl port"
-      }
-    },
     "portRTMP": {
       "type": "string",
       "defaultValue": "1935",
@@ -78,13 +64,6 @@
       "defaultValue": "8554",
       "metadata": {
         "description": "rtsp port"
-      }
-    },
-    "portHLS": {
-      "type": "string",
-      "defaultValue": "8080",
-      "metadata": {
-        "description": "hls port"
       }
     },
     "storageAccountName": {
@@ -174,48 +153,6 @@
               "destinationAddressPrefix": "*",
               "access": "Allow",
               "priority": 102,
-              "direction": "Inbound"
-            }
-          },
-          {
-            "name": "hls",
-            "properties": {
-              "description": "hls server port",
-              "protocol": "Tcp",
-              "sourcePortRange": "*",
-              "destinationPortRange": "[parameters('portHLS')]",
-              "sourceAddressPrefix": "Internet",
-              "destinationAddressPrefix": "*",
-              "access": "Allow",
-              "priority": 103,
-              "direction": "Inbound"
-            }
-          },
-          {
-            "name": "http",
-            "properties": {
-              "description": "http server port",
-              "protocol": "Tcp",
-              "sourcePortRange": "*",
-              "destinationPortRange": "[parameters('portHTTP')]",
-              "sourceAddressPrefix": "Internet",
-              "destinationAddressPrefix": "*",
-              "access": "Allow",
-              "priority": 104,
-              "direction": "Inbound"
-            }
-          },
-          {
-            "name": "ssl",
-            "properties": {
-              "description": "ssl server port",
-              "protocol": "Tcp",
-              "sourcePortRange": "*",
-              "destinationPortRange": "[parameters('portSSL')]",
-              "sourceAddressPrefix": "Internet",
-              "destinationAddressPrefix": "*",
-              "access": "Allow",
-              "priority": 105,
               "direction": "Inbound"
             }
           },
@@ -372,21 +309,13 @@
     }    
   ],
   "outputs": {
-    "httpPlayerCmd": {
-      "type": "string",
-      "value": "[concat('http://',variables('vmName'),'.', resourceGroup().location, '.cloudapp.azure.com/player.html')]"
-    },
     "rtmpUrl": {
       "type": "string",
-      "value": "[concat('http://',variables('vmName'),'.', resourceGroup().location, '.cloudapp.azure.com:1935/live/stream')]"
-    },
-    "hlsUrl": {
-      "type": "string",
-      "value": "[concat('http://',variables('vmName'),'.', resourceGroup().location, '.cloudapp.azure.com:8080/live/stream.m3u8')]"
+      "value": "[concat('rtmp://',variables('vmName'),'.', resourceGroup().location, '.cloudapp.azure.com:1935/live/stream')]"
     },
     "rtspUrl": {
       "type": "string",
-      "value": "[concat('http://',variables('vmName'),'.', resourceGroup().location, '.cloudapp.azure.com:8554/rtsp/stream')]"
+      "value": "[concat('rtsp://',variables('vmName'),'.', resourceGroup().location, '.cloudapp.azure.com:8554/live/stream')]"
     },
     "ffmpegCmd": {
       "type": "string",
