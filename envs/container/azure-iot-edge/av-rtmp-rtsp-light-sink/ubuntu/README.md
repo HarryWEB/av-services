@@ -31,7 +31,7 @@ As avtool.sh is a Linux bash file, you could run this tool from a machine or vir
 ```bash
     mkdir $HOME/git
     cd $HOME/git
-    git clone https://github.com/flecoqui/av-services.git
+    git clone https://github.com/HarryWEB/av-services.git
     cd av-services/envs/container/docker/av-rtmp-rtsp-light-sink/alpine 
 ```
 1. Run avtool.sh -a install to install the pre-requisite ffmpeg, Azure Client, ... 

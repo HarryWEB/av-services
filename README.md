@@ -204,7 +204,7 @@ Follow the steps below to install the pre-requities.
 ```bash
     mkdir $HOME/git
     cd $HOME/git
-    git clone https://github.com/flecoqui/av-services.git
+    git clone https://github.com/HarryWEB/av-services.git
     cd av-services/envs/container/docker/av-ffmpeg/alpine 
 ```
 3. Change to a directory containing a avtool.sh file.  
